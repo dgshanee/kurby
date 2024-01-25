@@ -1,9 +1,9 @@
 package dom
 
 import (
-	"cs/kurby/components"
 	"encoding/xml"
 	"fmt"
+	"github.com/dgshanee/kurby/components"
 	"os"
 )
 
@@ -17,7 +17,16 @@ func Display() {
 	xmlFile, err := os.ReadFile("structure.kurby")
 	check(err)
 
-	BuildDOMTree(xmlFile)
+	rootNode := BuildDOMTree(xmlFile)
+
+	displayNode(rootNode)
+}
+
+func displayNode(node Node) {
+	fmt.Print(node.component.Render())
+	for _, i := range *node.children {
+		displayNode(i)
+	}
 }
 
 func GetElements(xmlSlice []byte) {

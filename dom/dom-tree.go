@@ -1,10 +1,12 @@
 package dom
 
 import (
-	"cs/kurby/components"
 	"encoding/xml"
 	"fmt"
+	"reflect"
 	"strings"
+
+	"github.com/dgshanee/kurby/components"
 )
 
 type Node struct {
@@ -16,7 +18,7 @@ var (
 	root Node
 )
 
-func BuildDOMTree(xmlFile []byte) {
+func BuildDOMTree(xmlFile []byte) Node {
 	var cmp components.Body
 	err := xml.Unmarshal(xmlFile, &cmp)
 	if err != nil {
@@ -28,7 +30,7 @@ func BuildDOMTree(xmlFile []byte) {
 	seeds := cmp.GetChildren()
 	buildDOMTree(seeds, &root)
 	fmt.Println("Done building")
-	displayTree(root, 0)
+	return root
 }
 
 func buildDOMTree(cmps []components.ComponentProp, parent *Node) {
@@ -53,7 +55,7 @@ func buildDOMTree(cmps []components.ComponentProp, parent *Node) {
 func displayTree(root Node, depth int) {
 	indent := strings.Repeat("   ", depth)
 
-	fmt.Printf("%sComponent:%s\n", indent, root.component.GetInnerText())
+	fmt.Printf("%sComponent:%s, type %s\n", indent, root.component.GetInnerText(), reflect.TypeOf(root.component))
 
 	for _, child := range *root.children {
 		displayTree(child, depth+1)

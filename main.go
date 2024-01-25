@@ -1,8 +1,8 @@
 package main
 
 import (
-	"cs/kurby/dom"
 	"fmt"
+	"github.com/dgshanee/kurby/dom"
 	"os"
 )
 

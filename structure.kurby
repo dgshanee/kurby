@@ -1,5 +1,5 @@
 <Body>
-	<h1>Parent
+	<h1 inline = "True">Parent
 		<h1>Child
 			<h1>2nd Child</h1>
 		</h1>

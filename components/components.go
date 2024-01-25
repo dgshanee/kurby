@@ -17,6 +17,11 @@ type ComponentProp struct {
 	Width     int             `xml:"width,attr"`
 	InnerText string          `xml:",chardata"`
 	Children  []ComponentProp `xml:",any"`
+	Inline    bool            `xml:"inline,attr"`
+}
+
+func (cmp ComponentProp) isInline() bool {
+	return cmp.Inline
 }
 
 func (cmp ComponentProp) GetInnerText() string {
