@@ -15,6 +15,6 @@ func bodyFactory(cmp ComponentProp) Component {
 	return t
 }
 
-func (b Body) Render() string {
+func (b Body) Render(v interface{}) string {
 	return ""
 }

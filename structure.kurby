@@ -1,4 +1,8 @@
 <Body>
 	<h1>Hello</h1>
 	<h1>World</h1>
+	<box title = "New box">
+	<box title = "In a box"> I'm in a box! </box>
+	<p>Me too!</p>
+	</box>
 </Body>

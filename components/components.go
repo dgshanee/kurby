@@ -5,7 +5,7 @@ import (
 )
 
 type Component interface {
-	Render() string
+	Render(v interface{}) string
 	GetChildren() []ComponentProp
 	GetInnerText() string
 	GetXMLName() string
@@ -18,6 +18,7 @@ type ComponentProp struct {
 	InnerText string          `xml:",chardata"`
 	Children  []ComponentProp `xml:",any"`
 	Inline    bool            `xml:"inline,attr"`
+	Title     string          `xml:"title,attr"`
 }
 
 func (cmp ComponentProp) isInline() bool {
