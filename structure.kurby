@@ -1,8 +1,4 @@
 <Body>
-	<h1 inline = "True">Parent
-		<h1>Child
-			<h1>2nd Child</h1>
-		</h1>
-		<h1>3rd child</h1>
-	</h1>
+	<h1>Hello</h1>
+	<h1>World</h1>
 </Body>

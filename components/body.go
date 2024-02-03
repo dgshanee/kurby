@@ -16,5 +16,5 @@ func bodyFactory(cmp ComponentProp) Component {
 }
 
 func (b Body) Render() string {
-	return "rendering body element..."
+	return ""
 }

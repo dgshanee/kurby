@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 )
 
 type h1 struct {
@@ -20,10 +21,15 @@ func h1Factory(cmp ComponentProp) Component {
 
 func (c h1) Render() string {
 	var res string
-	if c.Inline {
-		res = pterm.DefaultBasicText.Sprint(strings.TrimSpace(c.GetInnerText()))
-	} else {
-		res = pterm.DefaultBasicText.Sprintf(strings.TrimSpace(c.GetInnerText()))
+	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
+
+	res, err := pterm.DefaultBigText.WithLetters(
+		letters,
+	).Srender()
+
+	if err != nil {
+		return "ERROR"
 	}
+
 	return res
 }

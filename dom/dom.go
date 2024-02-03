@@ -3,8 +3,10 @@ package dom
 import (
 	"encoding/xml"
 	"fmt"
-	"github.com/dgshanee/kurby/components"
 	"os"
+
+	"github.com/dgshanee/kurby/components"
+	"github.com/pterm/pterm"
 )
 
 func check(err error) {
@@ -23,7 +25,7 @@ func Display() {
 }
 
 func displayNode(node Node) {
-	fmt.Print(node.component.Render())
+	pterm.Print(node.component.Render())
 	for _, i := range *node.children {
 		displayNode(i)
 	}
