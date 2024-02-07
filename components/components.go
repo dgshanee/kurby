@@ -5,7 +5,7 @@ import (
 )
 
 type Component interface {
-	Render(v interface{}) string
+	Render(v string, inline bool) string
 	GetChildren() []ComponentProp
 	GetInnerText() string
 	GetXMLName() string

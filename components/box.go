@@ -14,20 +14,12 @@ func boxFactory(cmp ComponentProp) Component {
 	return t
 }
 
-func (c Box) Render(v interface{}) string {
+func (c Box) Render(v string, inline bool) string {
 	box := pterm.DefaultBox
-	var renderPanels string
-	var panels []pterm.Panel
-	if strs, ok := v.([]string); ok {
-		for _, str := range strs {
-			panel := pterm.Panel{Data: str}
-			panels = append(panels, panel)
-		}
 
-		finPanels := pterm.Panels{panels}
+	var panels [][]pterm.Panel
+	var curr []pterm.Panel
 
-		renderPanels, _ = pterm.DefaultPanel.WithPanels(finPanels).Srender()
-	}
 	if c.ComponentProp.Title != "" {
 		box = *box.WithTitle(c.ComponentProp.Title)
 	}

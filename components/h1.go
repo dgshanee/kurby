@@ -19,7 +19,7 @@ func h1Factory(cmp ComponentProp) Component {
 	return t
 }
 
-func (c h1) Render(v interface{}) string {
+func (c h1) Render(v string, inline bool) string {
 	var res string
 	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
 

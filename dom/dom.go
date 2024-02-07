@@ -28,13 +28,13 @@ func displayNode(node Node) {
 	if node.component.GetXMLName() == "box" {
 		var rendered []string
 		for _, i := range *node.children {
-			rendered = append(rendered, i.component.Render(""))
+			rendered = append(rendered, i.component.Render("", false))
 		}
 
-		pterm.Print(node.component.Render(rendered))
+		pterm.Print(node.component.Render("", false))
 	} else {
 
-		pterm.Print(node.component.Render(""))
+		pterm.Print(node.component.Render("", false))
 		for _, i := range *node.children {
 			displayNode(i)
 		}

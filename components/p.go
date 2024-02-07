@@ -14,6 +14,6 @@ func pFactory(cmp ComponentProp) Component {
 	return t
 }
 
-func (c P) Render(v interface{}) string {
+func (c P) Render(v string, inline bool) string {
 	return pterm.DefaultBasicText.Sprint(c.InnerText)
 }
