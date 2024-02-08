@@ -16,7 +16,7 @@ func check(err error) {
 }
 
 func Display() {
-	xmlFile, err := os.ReadFile("structure.kurby")
+	xmlFile, err := os.ReadFile("structure.xml")
 	check(err)
 
 	rootNode := BuildDOMTree(xmlFile)
