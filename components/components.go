@@ -2,23 +2,28 @@ package components
 
 import (
 	"encoding/xml"
+
+	"github.com/dgshanee/kurby/styles"
 )
 
 type Component interface {
-	Render(v interface{}) string
+	Render(style styles.Styles, renderedChildren ...[]string) string
 	GetChildren() []ComponentProp
 	GetInnerText() string
 	GetXMLName() string
+	GetStyles() styles.Styles
 }
 
 type ComponentProp struct {
 	XMLName   xml.Name
-	Height    int             `xml:"height,attr"`
-	Width     int             `xml:"width,attr"`
 	InnerText string          `xml:",chardata"`
 	Children  []ComponentProp `xml:",any"`
-	Inline    bool            `xml:"inline,attr"`
 	Title     string          `xml:"title,attr"`
+	styles.Styles
+}
+
+func (cmp ComponentProp) GetStyles() styles.Styles {
+	return cmp.Styles
 }
 
 func (cmp ComponentProp) isInline() bool {

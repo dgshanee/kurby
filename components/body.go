@@ -2,6 +2,7 @@ package components
 
 import (
 	"encoding/xml"
+	"github.com/dgshanee/kurby/styles"
 )
 
 type Body struct {
@@ -15,6 +16,6 @@ func bodyFactory(cmp ComponentProp) Component {
 	return t
 }
 
-func (b Body) Render(v interface{}) string {
+func (b Body) Render(style styles.Styles, renderedChildren ...[]string) string {
 	return ""
 }
