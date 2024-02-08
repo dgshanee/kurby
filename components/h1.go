@@ -20,7 +20,11 @@ func h1Factory(cmp ComponentProp) Component {
 	return t
 }
 
+<<<<<<< HEAD
 func (c h1) Render(style styles.Styles, renderedChildren ...[]string) string {
+=======
+func (c h1) Render(v string, inline bool) string {
+>>>>>>> boxes
 	var res string
 	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
 

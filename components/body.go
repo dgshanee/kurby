@@ -16,6 +16,10 @@ func bodyFactory(cmp ComponentProp) Component {
 	return t
 }
 
+<<<<<<< HEAD
 func (b Body) Render(style styles.Styles, renderedChildren ...[]string) string {
+=======
+func (b Body) Render(v string, inline bool) string {
+>>>>>>> boxes
 	return ""
 }
