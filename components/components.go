@@ -7,7 +7,11 @@ import (
 )
 
 type Component interface {
+<<<<<<< HEAD
 	Render(style styles.Styles, renderedChildren ...[]string) string
+=======
+	Render(v string, inline bool) string
+>>>>>>> boxes
 	GetChildren() []ComponentProp
 	GetInnerText() string
 	GetXMLName() string

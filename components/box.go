@@ -58,6 +58,14 @@ func (c Box) Render(style styles.Styles, renderedChildren ...[]string) string {
 		box = *box.WithBottomPadding(style.BottomPadding)
 	}
 
+=======
+func (c Box) Render(v string, inline bool) string {
+	box := pterm.DefaultBox
+
+	var panels [][]pterm.Panel
+	var curr []pterm.Panel
+
+>>>>>>> boxes
 	if c.ComponentProp.Title != "" {
 		box = *box.WithTitle(c.ComponentProp.Title)
 	}
