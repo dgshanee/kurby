@@ -25,16 +25,19 @@ func Display() {
 }
 
 func displayNode(node Node) {
-	if node.component.GetXMLName() == "box" {
+	component := node.component
+	componentStyles := component.GetStyles()
+	if component.GetXMLName() == "box" {
 		var rendered []string
 		for _, i := range *node.children {
-			rendered = append(rendered, i.component.Render(""))
+			child := i.component
+			childStyles := component.GetStyles()
+			rendered = append(rendered, child.Render(childStyles))
 		}
-
-		pterm.Print(node.component.Render(rendered))
+		pterm.Print(component.Render(componentStyles, rendered))
 	} else {
 
-		pterm.Print(node.component.Render(""))
+		pterm.Print(component.Render(componentStyles))
 		for _, i := range *node.children {
 			displayNode(i)
 		}

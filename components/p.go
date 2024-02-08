@@ -1,6 +1,7 @@
 package components
 
 import (
+	"github.com/dgshanee/kurby/styles"
 	"github.com/pterm/pterm"
 )
 
@@ -14,6 +15,6 @@ func pFactory(cmp ComponentProp) Component {
 	return t
 }
 
-func (c P) Render(v interface{}) string {
+func (c P) Render(style styles.Styles, renderedChildren ...[]string) string {
 	return pterm.DefaultBasicText.Sprint(c.InnerText)
 }

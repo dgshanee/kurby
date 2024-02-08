@@ -4,6 +4,7 @@ import (
 	"encoding/xml"
 	"strings"
 
+	"github.com/dgshanee/kurby/styles"
 	"github.com/pterm/pterm"
 	"github.com/pterm/pterm/putils"
 )
@@ -19,7 +20,7 @@ func h1Factory(cmp ComponentProp) Component {
 	return t
 }
 
-func (c h1) Render(v interface{}) string {
+func (c h1) Render(style styles.Styles, renderedChildren ...[]string) string {
 	var res string
 	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
 
