@@ -22,7 +22,13 @@ func h1Factory(cmp ComponentProp) Component {
 
 func (c h1) Render(style styles.Styles, renderedChildren ...[]string) string {
 	var res string
-	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
+	str := strings.TrimSpace(c.GetInnerText())
+	letters := putils.LettersFromString(str)
+	if style.RGB != "" {
+		r, g, b := styles.GetRGBFromString(style.RGB)
+
+		letters = putils.LettersFromStringWithRGB(str, pterm.NewRGB(r, g, b))
+	}
 
 	res, err := pterm.DefaultBigText.WithLetters(
 		letters,

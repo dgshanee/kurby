@@ -1,14 +1,8 @@
 <Body>
-	<h1>Hello</h1>
-	<h1>World</h1>
-	<box width = "2" padding = "10">
-		<box>
-			<p> I'm 🔥🔥 in a box in a box </p>
-			<box padding = "20">
-				<p>I'm in a box in a box in a box</p>
-			</box>
-		</box>
-		<h1>I'm in a box</h1>
-		<box title = "boxxxxx" padding = "5">IM ANOTHER BOXXXXXX</box>
+	<box title = "hie">
+		<h1 rgb = "255,0,0" inline = "true">H</h1>
+		<h1 rgb = "0,255,0" inline = "true">I</h1>
+		<h1 rgb = "0,0,255">E</h1>
 	</box>
 </Body>
+
