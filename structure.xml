@@ -1,0 +1,8 @@
+<Body>
+	<box title = "hie">
+		<h1 rgb = "255,0,0" inline = "true">H</h1>
+		<h1 rgb = "0,255,0" inline = "true">I</h1>
+		<h1 rgb = "0,0,255">E</h1>
+	</box>
+</Body>
+

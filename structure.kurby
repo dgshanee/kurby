@@ -1,8 +1,0 @@
-<Body>
-	<h1>Hello</h1>
-	<h1>World</h1>
-	<box width = "1" padding = "20">
-	<h1>In a box</h1>
-	<p>Me too!</p>
-	</box>
-</Body>

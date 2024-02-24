@@ -20,13 +20,15 @@ func h1Factory(cmp ComponentProp) Component {
 	return t
 }
 
-<<<<<<< HEAD
 func (c h1) Render(style styles.Styles, renderedChildren ...[]string) string {
-=======
-func (c h1) Render(v string, inline bool) string {
->>>>>>> boxes
 	var res string
-	letters := putils.LettersFromString(strings.TrimSpace(c.GetInnerText()))
+	str := strings.TrimSpace(c.GetInnerText())
+	letters := putils.LettersFromString(str)
+	if style.RGB != "" {
+		r, g, b := styles.GetRGBFromString(style.RGB)
+
+		letters = putils.LettersFromStringWithRGB(str, pterm.NewRGB(r, g, b))
+	}
 
 	res, err := pterm.DefaultBigText.WithLetters(
 		letters,
